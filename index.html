@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repuestos del Automotor PEKA | Envíos a todo el país</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'peka-dark': '#0f172a',
+                        'peka-panel': '#1e293b',
+                        'peka-blue': '#2563eb',
+                        'peka-accent': '#f59e0b',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes subtle-zoom {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.25);
+            }
+        }
+
+        .animate-subtle-zoom {
+            animation: subtle-zoom 40s ease-in-out infinite alternate;
+        }
+    </style>
+</head>
+<body class="bg-peka-dark text-slate-200 font-sans antialiased">
+    <nav class="bg-peka-panel/90 backdrop-blur border-b border-slate-700 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-white tracking-tighter">PEKA<span class="text-peka-blue">.AUTOPARTS</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <a href="https://api.whatsapp.com/send?phone=+543489524324&text=Hola%20quiero%20mas%20informacion!!!"
+                       class="text-sm font-medium hover:text-peka-accent transition">
+                       <i class="fab fa-whatsapp text-lg mr-1"></i> Atención Inmediata
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- HEADER CON ANIMACIÓN DE MOVIMIENTO -->
+    <header class="relative overflow-hidden">
+        <!-- Imagen de fondo con zoom sutil -->
+        <img src="https://news.dupontregistry.com/cdn/shop/articles/1.-Project-Viva-front-scaled.jpg?v=1767080425" 
+             alt="Auto deportivo" 
+             class="absolute inset-0 w-full h-full object-cover object-center animate-subtle-zoom"
+             style="transform-origin: center center;">
+        
+        <!-- Overlay oscuro -->
+        <div class="absolute inset-0 bg-peka-dark/70"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-48 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4">
+                El repuesto exacto <br class="hidden md:block" />
+                <span class="text-peka-blue">sin errores.</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-400">
+                Especialistas en e-commerce automotriz. Compatibilidad OEM garantizada.
+            </p>
+            <!-- BOTÓN DESPLEGABLE PARA FORMULARIO -->
+            <div class="mt-12">
+                <button onclick="document.getElementById('formulario').classList.toggle('hidden'); this.classList.toggle('mb-8')"
+                        class="bg-peka-accent hover:bg-yellow-400 text-slate-900 font-bold py-5 px-10 rounded-full text-xl shadow-2xl transition transform hover:scale-105">
+                    <i class="fas fa-comments mr-3"></i> ¡Consultá tu repuesto ahora! 🚗
+                </button>
+            </div>
+            <!-- FORMULARIO OCULTO POR DEFECTO -->
+            <div class="mt-8 max-w-xl mx-auto hidden transition-all duration-500" id="formulario">
+                <div class="bg-peka-panel/95 backdrop-blur p-6 rounded-xl shadow-2xl border border-slate-600">
+                    <h3 class="text-2xl font-bold text-white mb-6">¡Consultá tu repuesto ahora!</h3>
+                    <div class="grid grid-cols-1 gap-4">
+                        <input id="nombre" type="text" placeholder="Tu nombre" class="bg-slate-900 text-white px-4 py-3 rounded-lg focus:ring-2 focus:ring-peka-blue outline-none border border-slate-700 placeholder-slate-500">
+                        <input id="repuesto" type="text" placeholder="Tipo de repuesto (ej: amortiguadores delanteros)" class="bg-slate-900 text-white px-4 py-3 rounded-lg focus:ring-2 focus:ring-peka-blue outline-none border border-slate-700 placeholder-slate-500">
+                        <input id="marca" type="text" placeholder="Marca del vehículo (ej: Toyota Hilux)" class="bg-slate-900 text-white px-4 py-3 rounded-lg focus:ring-2 focus:ring-peka-blue outline-none border border-slate-700 placeholder-slate-500">
+                        <button onclick="sendToWhatsApp()" class="bg-peka-accent hover:bg-yellow-400 text-slate-900 font-bold py-4 px-8 rounded-lg transition flex items-center justify-center shadow-lg">
+                            <i class="fab fa-whatsapp text-2xl mr-3"></i> ENVIAR CONSULTA POR WHATSAPP
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN MARCAS DE VEHÍCULOS -->
+    <section class="py-12 bg-peka-dark border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-slate-500 text-sm font-semibold uppercase tracking-widest mb-8">Trabajamos con las principales marcas</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition">
+                <img src="https://logos-world.net/wp-content/uploads/2021/08/Citroen-Emblem.png" alt="Citroën" class="h-12 md:h-16 transition hover:opacity-100">
+                <img src="https://logos-world.net/wp-content/uploads/2021/03/Ford-Symbol.png" alt="Ford" class="h-12 md:h-16 transition hover:opacity-100">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Renault_logo.svg/1280px-Renault_logo.svg.png" alt="Renault" class="h-12 md:h-16 transition hover:opacity-100">
+                <img src="https://www.pngall.com/wp-content/uploads/13/Chevy-Logo-PNG-Picture.png" alt="Chevrolet" class="h-12 md:h-16 transition hover:opacity-100">
+                <img src="https://cdn.imgbin.com/0/1/5/imgbin-fiat-automobiles-car-gif-logo-fiat-500-car-qvekCprhxSSQ20Dc8MtEJiZCV.jpg" alt="Fiat" class="h-12 md:h-16 transition hover:opacity-100">
+                <img src="https://logos-world.net/wp-content/uploads/2021/10/Peugeot-Emblem.png" alt="Peugeot" class="h-12 md:h-16 transition hover:opacity-100">
+                <img src="https://1000logos.net/wp-content/uploads/2018/03/Honda-Logo-2000.png" alt="Honda" class="h-12 md:h-16 transition hover:opacity-100">
+                <img src="https://logos-world.net/wp-content/uploads/2020/04/Nissan-Logo.png" alt="Nissan" class="h-12 md:h-16 transition hover:opacity-100">
+                <img src="https://cdn.freebiesupply.com/logos/large/2x/toyota-logo-png-transparent.png" alt="Toyota" class="h-12 md:h-16 transition hover:opacity-100">
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORÍAS POPULARES COMPLETAS -->
+    <section class="py-16 max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-white mb-8 text-center">Categorías Populares</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Suspensión (destacada) -->
+            <a href="#" class="group bg-peka-panel p-6 rounded-xl border border-slate-700 hover:border-peka-blue hover:shadow-xl hover:shadow-blue-900/20 transition transform hover:-translate-y-1 border-l-4 border-peka-blue">
+                <i class="fas fa-car-crash text-3xl text-peka-blue mb-4 group-hover:text-white transition"></i>
+                <h3 class="font-semibold text-white">Suspensión</h3>
+                <p class="text-xs text-slate-500 mt-1">Amortiguadores y kits para VW Gol, Toyota Etios, Peugeot 208</p>
+            </a>
+            <a href="#" class="group bg-peka-panel p-6 rounded-xl border border-slate-700 hover:border-peka-blue hover:shadow-xl hover:shadow-blue-900/20 transition transform hover:-translate-y-1">
+                <i class="fas fa-cogs text-3xl text-peka-blue mb-4 group-hover:text-white transition"></i>
+                <h3 class="font-semibold text-white">Tren Delantero</h3>
+                <p class="text-xs text-slate-500 mt-1">Bujes y parrillas para Fiat Cronos, Chevrolet Onix</p>
+            </a>
+            <a href="#" class="group bg-peka-panel p-6 rounded-xl border border-slate-700 hover:border-peka-blue hover:shadow-xl hover:shadow-blue-900/20 transition transform hover:-translate-y-1">
+                <i class="fas fa-bullseye text-3xl text-peka-blue mb-4 group-hover:text-white transition"></i>
+                <h3 class="font-semibold text-white">Frenos</h3>
+                <p class="text-xs text-slate-500 mt-1">Pastillas y discos para Renault Sandero, Ford Ka</p>
+            </a>
+            <a href="#" class="group bg-peka-panel p-6 rounded-xl border border-slate-700 hover:border-peka-blue hover:shadow-xl hover:shadow-blue-900/20 transition transform hover:-translate-y-1">
+                <i class="fas fa-oil-can text-3xl text-peka-blue mb-4 group-hover:text-white transition"></i>
+                <h3 class="font-semibold text-white">Aceites y Filtros</h3>
+                <p class="text-xs text-slate-500 mt-1">Lubricantes y filtros originales todas las marcas</p>
+            </a>
+            <a href="#" class="group bg-peka-panel p-6 rounded-xl border border-slate-700 hover:border-peka-blue hover:shadow-xl hover:shadow-blue-900/20 transition transform hover:-translate-y-1">
+                <i class="fas fa-bolt text-3xl text-peka-blue mb-4 group-hover:text-white transition"></i>
+                <h3 class="font-semibold text-white">Encendido</h3>
+                <p class="text-xs text-slate-500 mt-1">Bujías y bobinas para Toyota Hilux, VW Amarok</p>
+            </a>
+            <a href="#" class="group bg-peka-panel p-6 rounded-xl border border-slate-700 hover:border-peka-blue hover:shadow-xl hover:shadow-blue-900/20 transition transform hover:-translate-y-1">
+                <i class="fas fa-car-battery text-3xl text-peka-blue mb-4 group-hover:text-white transition"></i>
+                <h3 class="font-semibold text-white">Baterías</h3>
+                <p class="text-xs text-slate-500 mt-1">Moura, Bosch y Willard - Primeras marcas</p>
+            </a>
+            <!-- Beneficios como tarjetas -->
+            <a href="#" class="group bg-peka-panel p-6 rounded-xl border border-slate-700 hover:border-peka-blue hover:shadow-xl hover:shadow-blue-900/20 transition transform hover:-translate-y-1">
+                <i class="fas fa-shipping-fast text-3xl text-peka-accent mb-4 group-hover:text-white transition"></i>
+                <h3 class="font-semibold text-white">Entrega &lt; 72hs</h3>
+                <p class="text-xs text-slate-500 mt-1">Logística rápida a todo el país</p>
+            </a>
+            <a href="#" class="group bg-peka-panel p-6 rounded-xl border border-slate-700 hover:border-peka-blue hover:shadow-xl hover:shadow-blue-900/20 transition transform hover:-translate-y-1">
+                <i class="fas fa-tag text-3xl text-peka-accent mb-4 group-hover:text-white transition"></i>
+                <h3 class="font-semibold text-white">Precios Importador</h3>
+                <p class="text-xs text-slate-500 mt-1">Sin intermediarios, los mejores precios</p>
+            </a>
+            <a href="#" class="group bg-peka-panel p-6 rounded-xl border border-slate-700 hover:border-peka-blue hover:shadow-xl hover:shadow-blue-900/20 transition transform hover:-translate-y-1">
+                <i class="fas fa-check-circle text-3xl text-peka-accent mb-4 group-hover:text-white transition"></i>
+                <h3 class="font-semibold text-white">Garantía OEM</h3>
+                <p class="text-xs text-slate-500 mt-1">Compatibilidad 100% garantizada</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- CTA WHATSAPP -->
+    <section class="bg-gradient-to-r from-peka-blue to-blue-800 py-16">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">¿Dudas con el envío o stock?</h2>
+            <p class="text-blue-100 mb-8 text-lg">Hablamos directamente. Envíanos una foto de tu repuesto o consúltanos por tu modelo.</p>
+            <a href="https://api.whatsapp.com/send?phone=+543489524324&text=Hola%20quiero%20mas%20informacion!!!"
+               target="_blank"
+               class="inline-flex items-center bg-peka-accent text-slate-900 font-bold py-4 px-8 rounded-full text-lg hover:bg-yellow-400 hover:scale-105 transition shadow-lg">
+                <i class="fab fa-whatsapp text-2xl mr-2"></i> CONSULTAR ENVÍO AHORA
+            </a>
+            <p class="mt-4 text-sm text-blue-200">Respuesta promedio: 5 minutos.</p>
+        </div>
+    </section>
+
+    <!-- MARCAS DE REPUESTOS -->
+    <section class="py-12 bg-peka-dark border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-slate-500 text-sm font-semibold uppercase tracking-widest mb-6">Marcas que garantizan calidad</p>
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale">
+                <span class="text-2xl font-bold text-white hover:text-peka-blue hover:grayscale-0 transition cursor-default">BOSCH</span>
+                <span class="text-2xl font-bold text-white hover:text-peka-blue hover:grayscale-0 transition cursor-default">SKF</span>
+                <span class="text-2xl font-bold text-white hover:text-peka-blue hover:grayscale-0 transition cursor-default">VALEO</span>
+                <span class="text-2xl font-bold text-white hover:text-peka-blue hover:grayscale-0 transition cursor-default">SACHS</span>
+                <span class="text-2xl font-bold text-white hover:text-peka-blue hover:grayscale-0 transition cursor-default">MOURA</span>
+            </div>
+            <div class="mt-12 flex justify-center gap-4">
+                <span class="flex items-center text-slate-400 text-sm"><i class="fas fa-lock mr-2 text-green-500"></i> SSL Seguro</span>
+                <span class="flex items-center text-slate-400 text-sm"><i class="fas fa-shield-alt mr-2 text-green-500"></i> Compra Protegida</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-peka-panel border-t border-slate-700 pt-12 pb-6">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+                <span class="text-2xl font-bold text-white">PEKA<span class="text-peka-blue">.AUTOPARTS</span></span>
+                <p class="text-slate-400 mt-4 text-sm">
+                    Expertos en repuestos automotores. Calidad, precisión y velocidad para que tu auto no pare nunca.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase tracking-wider">Nuestro Local</h4>
+                <p class="text-slate-400 text-sm mb-4">
+                    Visítanos en nuestra sucursal para retiro inmediato o asesoramiento.
+                </p>
+                <a href="https://maps.app.goo.gl/7Hs7dKUwXtnbkN5h6"
+                   target="_blank"
+                   class="inline-flex items-center justify-center w-full bg-slate-700 hover:bg-peka-blue text-white font-semibold py-3 px-4 rounded transition">
+                    <i class="fas fa-map-marker-alt mr-2 text-peka-accent"></i> VER UBICACIÓN
+                </a>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase tracking-wider">Contacto</h4>
+                <ul class="space-y-2 text-sm text-slate-400">
+                    <li class="flex items-center"><i class="fas fa-envelope w-6 text-peka-blue"></i> ventas@repuestospeka.com</li>
+                    <li class="flex items-center"><i class="fas fa-phone w-6 text-peka-blue"></i> +54 3489 524324</li>
+                    <li class="flex items-center"><i class="fas fa-clock w-6 text-peka-blue"></i> Lun a Vie: 8:00 - 18:00</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 border-t border-slate-700 pt-6 text-center text-xs text-slate-500">
+            &copy; 2024 Repuestos PEKA. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- SCRIPT WHATSAPP -->
+    <script>
+        function sendToWhatsApp() {
+            let nombre = document.getElementById('nombre').value.trim() || 'un cliente';
+            let repuesto = document.getElementById('repuesto').value.trim() || 'un repuesto';
+            let marca = document.getElementById('marca').value.trim() || 'mi vehículo';
+            const message = `Hola 👋! Soy ${nombre}.\n\nNecesito: ${repuesto}\nPara mi ${marca} 🚗\n\n¿Tenés stock y precio? 😊\nGracias!`;
+            const encoded = encodeURIComponent(message);
+            const phone = '543489524324';
+            window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${encoded}`, '_blank');
+        }
+    </script>
+</body>
+</html>
