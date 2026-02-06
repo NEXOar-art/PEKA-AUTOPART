@@ -24,14 +24,14 @@
     <style>
         @keyframes subtle-zoom {
             0% {
-                transform: scale(1);
+                transform: scale(1.35);
             }
             100% {
-                transform: scale(1.25);
+                transform: scale(0.8);
             }
         }
         .animate-subtle-zoom {
-            animation: subtle-zoom 40s ease-in-out infinite alternate;
+            animation: subtle-zoom 25s ease-in-out infinite alternate;
         }
         @keyframes blink {
             0%, 100% { opacity: 1; }
@@ -87,13 +87,14 @@
                 <span id="typing-text">Especialistas en e-commerce automotriz. Compatibilidad OEM garantizada.</span>
             </p>
             
-            <!-- BOTÓN DESPLEGABLE PARA FORMULARIO -->
-            <div class="mt-12">
-                <button onclick="document.getElementById('formulario').classList.toggle('hidden'); this.classList.toggle('mb-8')"
-                        class="bg-peka-accent hover:bg-yellow-400 text-slate-900 font-bold py-5 px-10 rounded-full text-xl shadow-2xl transition transform hover:scale-105">
-                    <i class="fas fa-comments mr-3"></i> ¡Consultá tu repuesto ahora! 🚗
+            <!-- BOTÓN FLOTANTE MÁS PEQUEÑO Y POSICIONADO A LA DERECHA (COSTADO DEL AUTO) -->
+            <div class="absolute bottom-8 md:bottom-16 right-4 md:right-12 z-20">
+                <button onclick="document.getElementById('formulario').classList.toggle('hidden')"
+                        class="bg-peka-accent hover:bg-yellow-400 text-slate-900 font-bold py-3 px-6 rounded-full text-lg shadow-2xl transition transform hover:scale-105 flex items-center">
+                    <i class="fas fa-comments mr-2"></i> ¡Consultá tu repuesto ahora! 🚗
                 </button>
             </div>
+            
             <!-- FORMULARIO OCULTO POR DEFECTO -->
             <div class="mt-8 max-w-xl mx-auto hidden transition-all duration-500" id="formulario">
                 <div class="bg-peka-panel/95 backdrop-blur p-6 rounded-xl shadow-2xl border border-slate-600">
@@ -307,4 +308,5 @@
     </script>
 </body>
 </html>
+
 
