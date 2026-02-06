@@ -6,7 +6,7 @@
     <title>Repuestos del Automotor PEKA | Envíos a todo el país</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+ 
     <script>
         tailwind.config = {
             theme: {
@@ -30,9 +30,17 @@
                 transform: scale(1.25);
             }
         }
-
         .animate-subtle-zoom {
             animation: subtle-zoom 40s ease-in-out infinite alternate;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .cursor {
+            color: #f59e0b;
+            animation: blink 1s step-end infinite;
+            margin-left: 2px;
         }
     </style>
 </head>
@@ -43,35 +51,42 @@
                 <div class="flex items-center">
                     <span class="text-2xl font-bold text-white tracking-tighter">PEKA<span class="text-peka-blue">.AUTOPARTS</span></span>
                 </div>
-                <div class="hidden md:block">
+                <div class="hidden md:flex items-center space-x-8">
                     <a href="https://api.whatsapp.com/send?phone=+543489524324&text=Hola%20quiero%20mas%20informacion!!!"
-                       class="text-sm font-medium hover:text-peka-accent transition">
-                       <i class="fab fa-whatsapp text-lg mr-1"></i> Atención Inmediata
+                       class="text-sm font-medium hover:text-peka-accent transition flex items-center">
+                       <i class="fab fa-whatsapp text-lg mr-2"></i> Atención Inmediata
+                    </a>
+                    <a href="https://www.instagram.com/motorpeka/" target="_blank"
+                       class="text-sm font-medium hover:text-peka-accent transition flex items-center">
+                       <i class="fab fa-instagram text-lg mr-2"></i> Síguenos en Instagram
                     </a>
                 </div>
             </div>
         </div>
     </nav>
-    
+   
     <!-- HEADER CON ANIMACIÓN DE MOVIMIENTO -->
-    <header class="relative overflow-hidden">
+    <header class="relative overflow-hidden group">
         <!-- Imagen de fondo con zoom sutil -->
-        <img src="https://news.dupontregistry.com/cdn/shop/articles/1.-Project-Viva-front-scaled.jpg?v=1767080425" 
-             alt="Auto deportivo" 
-             class="absolute inset-0 w-full h-full object-cover object-center animate-subtle-zoom"
+        <img src="https://news.dupontregistry.com/cdn/shop/articles/1.-Project-Viva-front-scaled.jpg?v=1767080425"
+             alt="Auto deportivo"
+             class="absolute inset-0 w-full h-full object-cover object-center animate-subtle-zoom group-hover:brightness-150 transition-all duration-2000 ease-in-out"
              style="transform-origin: center center;">
-        
-        <!-- Overlay oscuro -->
-        <div class="absolute inset-0 bg-peka-dark/70"></div>
-        
+       
+        <!-- Overlay oscuro (más negro inicialmente para destacar la imagen) -->
+        <div class="absolute inset-0 bg-peka-dark/90 group-hover:bg-peka-dark/50 transition-all duration-2000 ease-in-out"></div>
+       
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-48 text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 transition-opacity duration-2000 ease-in-out">
                 El repuesto exacto <br class="hidden md:block" />
                 <span class="text-peka-blue">sin errores.</span>
             </h1>
-            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-400">
-                Especialistas en e-commerce automotriz. Compatibilidad OEM garantizada.
+            
+            <!-- SUBTÍTULO CON EFECTO TYPEWRITER EN PARTE INFERIOR IZQUIERDA -->
+            <p class="absolute left-6 md:left-12 bottom-12 md:bottom-16 text-left text-xl text-slate-400 max-w-lg z-20 drop-shadow-2xl">
+                <span id="typing-text">Especialistas en e-commerce automotriz. Compatibilidad OEM garantizada.</span>
             </p>
+            
             <!-- BOTÓN DESPLEGABLE PARA FORMULARIO -->
             <div class="mt-12">
                 <button onclick="document.getElementById('formulario').classList.toggle('hidden'); this.classList.toggle('mb-8')"
@@ -95,7 +110,6 @@
             </div>
         </div>
     </header>
-
     <!-- SECCIÓN MARCAS DE VEHÍCULOS -->
     <section class="py-12 bg-peka-dark border-y border-slate-800">
         <div class="max-w-7xl mx-auto px-4 text-center">
@@ -113,7 +127,6 @@
             </div>
         </div>
     </section>
-
     <!-- CATEGORÍAS POPULARES COMPLETAS -->
     <section class="py-16 max-w-7xl mx-auto px-4">
         <h2 class="text-3xl font-bold text-white mb-8 text-center">Categorías Populares</h2>
@@ -167,7 +180,6 @@
             </a>
         </div>
     </section>
-
     <!-- CTA WHATSAPP -->
     <section class="bg-gradient-to-r from-peka-blue to-blue-800 py-16">
         <div class="max-w-4xl mx-auto px-4 text-center">
@@ -181,7 +193,6 @@
             <p class="mt-4 text-sm text-blue-200">Respuesta promedio: 5 minutos.</p>
         </div>
     </section>
-
     <!-- MARCAS DE REPUESTOS -->
     <section class="py-12 bg-peka-dark border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 text-center">
@@ -199,11 +210,10 @@
             </div>
         </div>
     </section>
-
     <!-- NUEVO BOTÓN TALLER AUTOMOTOR PEKA (PARTE INFERIOR) -->
     <section class="py-16 bg-peka-panel">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <a href="https://nexoar-art.github.io/TALLER-AUTOMOTOR-PEKA/" 
+            <a href="https://nexoar-art.github.io/TALLER-AUTOMOTOR-PEKA/"
                target="_blank"
                class="inline-flex items-center bg-peka-blue hover:bg-blue-700 text-white font-bold py-6 px-12 rounded-full text-2xl shadow-2xl transition transform hover:scale-110 hover:shadow-blue-500/50">
                 <i class="fas fa-wrench text-3xl mr-4"></i>
@@ -212,7 +222,6 @@
             <p class="mt-6 text-slate-400 text-lg">Service completo • Diagnóstico • Reparaciones</p>
         </div>
     </section>
-
     <!-- FOOTER -->
     <footer class="bg-peka-panel border-t border-slate-700 pt-12 pb-6">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
@@ -246,7 +255,6 @@
             &copy; 2024 Repuestos PEKA. Todos los derechos reservados.
         </div>
     </footer>
-
     <!-- SCRIPT WHATSAPP -->
     <script>
         function sendToWhatsApp() {
@@ -259,5 +267,44 @@
             window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${encoded}`, '_blank');
         }
     </script>
+    <!-- SCRIPT PARA DESAPARECER EL TÍTULO PRINCIPAL DESPUÉS DE 5 SEGUNDOS -->
+    <script>
+        setTimeout(function() {
+            const title = document.querySelector('header h1');
+            if (title) {
+                title.classList.add('opacity-0');
+            }
+        }, 5000);
+    </script>
+    <!-- SCRIPT PARA EFECTO TYPEWRITER EN EL SUBTÍTULO -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const textElement = document.getElementById('typing-text');
+            if (!textElement) return;
+            
+            const fullText = textElement.innerText;
+            textElement.innerText = '';
+            
+            let index = 0;
+            const cursor = document.createElement('span');
+            cursor.classList.add('cursor');
+            cursor.textContent = '|';
+            textElement.appendChild(cursor);
+            
+            const typeWriter = () => {
+                if (index < fullText.length) {
+                    const nextChar = document.createTextNode(fullText.charAt(index));
+                    textElement.insertBefore(nextChar, cursor);
+                    index++;
+                    setTimeout(typeWriter, 70);
+                } else {
+                    cursor.remove();
+                }
+            };
+            
+            typeWriter();
+        });
+    </script>
 </body>
 </html>
+
